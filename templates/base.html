@@ -1,0 +1,33 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <base href="." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django Rechat</title>
+    <script type="text/javascript" src="https://unpkg.com/alpinejs@3.2.1/dist/cdn.min.js" defer></script>
+    <script type="text/javascript" src="https://unpkg.com/htmx.org@1.4.1"
+      integrity="sha384-1P2DfVFAJH2XsYTakfc6eNhTVtyio74YNA1tc6waJ0bO+IfaexSWXc2x62TgBcXe"
+      crossorigin="anonymous"></script>
+    {% tailwind_css %}
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="flex flex-col w-screen h-screen">
+      <div class="w-full p-3 text-xl bg-slate-300">Django Rechat</div>
+      <div class="flex-grow w-full" id="main">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </body>
+
+</html>

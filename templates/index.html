@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "rechat/init.html" %}
+<div class="flex flex-row h-full" x-init="$rechat.hxget('{% url 'rechat-rooms' %}', '#rooms')">
+  <div id="rooms" class="w-2/12 h-full p-3 border-r border-gray-200 bg-slate-100">
+    Loading rooms ..
+  </div>
+  <div id="room">
+    <div class="p-5 text-stone-400">Select a chatroom</div>
+  </div>
+</div>
+{% endblock %}

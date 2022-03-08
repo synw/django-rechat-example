@@ -1,0 +1,11 @@
+<ul id="rooms-list" class="space-y-2">
+	{% for room in rooms %}
+	<li class="cursor-pointer">
+		<div x-on:click="$chatroom.open(
+			'{{ room.name }}', 
+			'{% url 'rechat-room' room.slug %}', 
+			'{% url 'rechat-post' room.slug %}'
+			)">{{ room.name }}</div>
+	</li>
+	{% endfor %}
+</ul>
